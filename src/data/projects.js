@@ -48,7 +48,7 @@ export const projects = [
       "Modern UI",
       "Smooth CSS Animations",
     ],
-    github: "",
+    github: "https://github.com/madhur-kardam/Portfolio",
     demo: "",
   },
 ];
