@@ -56,7 +56,7 @@ export function Hero() {
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row lg:items-start lg:justify-start">
             <Button onClick={scrollToContact}>Hire Me</Button>
             <Button variant="outline" asChild>
-              <a href={resume} download="Madhur_Kardam_Resume.pdf">
+              <a href={resume} download="Madhur_Resume.pdf">
                 Download Resume
               </a>
             </Button>
