@@ -90,8 +90,9 @@ export function Contact() {
                   Send another message
                 </Button>
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+            ) : (                                                                            //<form action="https://formsubmit.co/YOUR_EMAIL@gmail.com" method="POST" onSubmit={handleSubmit} className="flex flex-col gap-5">
+              <form action="https://formsubmit.co/madhurkardam681@gmail.com" 
+              method="POST" className="flex flex-col gap-5">               
                 <div>
                   <label htmlFor="name" className="mb-2 block text-sm font-medium text-textmain">
                     Name
