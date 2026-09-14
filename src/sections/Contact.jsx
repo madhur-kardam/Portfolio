@@ -24,8 +24,9 @@ const contactDetails = [
 
 export function Contact() {
   const fadeRef = useScrollFade();
+  const [status, setStatus] = useState("");
   const [submitted, setSubmitted] = useState(false);
-
+  const [sending, setSending] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
     // No backend wired up — this form is presentational only, as requested.
@@ -91,8 +92,38 @@ export function Contact() {
                 </Button>
               </div>
             ) : (                                                                            //<form action="https://formsubmit.co/YOUR_EMAIL@gmail.com" method="POST" onSubmit={handleSubmit} className="flex flex-col gap-5">
-              <form action="https://formsubmit.co/madhurkardam681@gmail.com" 
-              method="POST" className="flex flex-col gap-5">               
+              <form  onSubmit={async (e) => {
+                e.preventDefault();
+
+                setSending(true);
+                setStatus("");
+
+                const formData = new FormData(e.target);
+
+                try {
+                  const response = await fetch(
+                  "https://formsubmit.co/ajax/madhurkardam681@gmail.com",
+                  {
+                   method: "POST",
+                   headers: {
+                          Accept: "application/json",
+                          },
+                   body: formData,
+                  }
+                 );
+
+                   if (response.ok) {
+                   setStatus("Message sent successfully! I'll get back to you soon.");
+                   e.target.reset();
+                   } else {
+                   setStatus("Something went wrong. Please try again.");
+                   }
+                } catch (error) {
+                  setStatus("Something went wrong. Please try again.");
+                  } finally {
+                  setSending(false);
+                  }
+                }} className="flex flex-col gap-5">               
                 <div>
                   <label htmlFor="name" className="mb-2 block text-sm font-medium text-textmain">
                     Name
@@ -120,9 +151,11 @@ export function Contact() {
                   />
                 </div>
 
-                <Button type="submit" className="w-full">
-                  Send Message
+                <Button type="submit" disabled={sending} className="w-full">
+                  {sending ? "Sending..." : "Send Message"}
                 </Button>
+                {status && <p className="mt-2 text-sm text-textmain">{status}</p>}
+              
               </form>
             )}
           </Card>
