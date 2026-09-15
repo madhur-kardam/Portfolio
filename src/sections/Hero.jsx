@@ -9,9 +9,9 @@ import {
 } from "../components/Icons";
 import { socialLinks } from "../data/links";
 import profileImage from "../assets/profileImage.png";
-import resume from "../assets/Madhur_Resume.pdf";
+import resume from "../assets/madhurResume.pdf";
 
-const roles = ["Frontend Developer", "React Developer", "Problem Solver"];
+const roles = ["FullStack Developer","Frontend Developer", "React Developer", "Problem Solver","Backend Developer"];
 
 export function Hero() {
   const typedText = useTypingEffect(roles);
@@ -56,7 +56,7 @@ export function Hero() {
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row lg:items-start lg:justify-start">
             <Button onClick={scrollToContact}>Hire Me</Button>
             <Button variant="outline" asChild>
-              <a href={resume} download="Madhur_Resume.pdf">
+              <a href={resume} download="madhurResume.pdf">
                 Download Resume
               </a>
             </Button>

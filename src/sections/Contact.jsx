@@ -91,7 +91,7 @@ export function Contact() {
                   Send another message
                 </Button>
               </div>
-            ) : (                                                                            //<form action="https://formsubmit.co/YOUR_EMAIL@gmail.com" method="POST" onSubmit={handleSubmit} className="flex flex-col gap-5">
+            ) : (                                                                        
               <form  onSubmit={async (e) => {
                 e.preventDefault();
 

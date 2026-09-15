@@ -17,6 +17,7 @@ export const projects = [
       "Backend Integration",
     ],
     github: "https://github.com/madhur-kardam/WORK-LINK",
+    demo: "https://worklink-tlpi.onrender.com/",
   },
   {
     title: "Indore Property Price Prediction Platform",
@@ -49,6 +50,6 @@ export const projects = [
       "Smooth CSS Animations",
     ],
     github: "https://github.com/madhur-kardam/Portfolio",
-    demo: "",
+    demo: "https://portfolio-ten-eta-0xrjgy31lo.vercel.app/",
   },
 ];
